@@ -1,17 +1,18 @@
 'use strict';
 
-var React = require('react');
-var {
+import React from 'react'
+import {
   Dimensions,
   StyleSheet,
   Text,
   View,
-} = require('react-native');
+} from 'react-native'
 
-var TimerMixin = require('react-timer-mixin');
-var CarouselPager = require('./CarouselPager');
+import TimerMixin from 'react-timer-mixin'
+import CarouselPager from './CarouselPager'
+import createReactClass from 'create-react-class'
 
-var Carousel = React.createClass({
+var Carousel = createReactClass({
   mixins: [TimerMixin],
 
   getDefaultProps() {
@@ -67,7 +68,7 @@ var Carousel = React.createClass({
 
   changePage(nextPage) {
     this.setState({activePage: nextPage});
-    this.refs.pager.scrollToPage(nextPage);
+    this.refs.pager.scrollToPage(nextPage, this.props.animate);
   },
 
   renderPageIndicator() {
@@ -173,4 +174,4 @@ var styles = StyleSheet.create({
   },
 });
 
-module.exports = Carousel;
+export default Carousel;

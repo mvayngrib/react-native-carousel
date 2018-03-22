@@ -1,9 +1,11 @@
-var React = require('react');
-var {
-  ScrollView,
-} = require('react-native');
+import React from 'react'
+import {
+  ScrollView
+} from 'react-native'
 
-var CarouselPager = React.createClass({
+import createReactClass from 'create-react-class'
+
+var CarouselPager = createReactClass({
 
   scrollToPage(page, animated) {
     if (typeof animated === 'undefined') {
@@ -34,4 +36,4 @@ var CarouselPager = React.createClass({
   },
 });
 
-module.exports = CarouselPager;
+export default CarouselPager;
