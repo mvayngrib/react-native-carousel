@@ -148,6 +148,7 @@ var Carousel = createReactClass({
       <View style={{ flex: 1 }}>
         <CarouselPager
           ref="pager"
+          component={this.props.component}
           width={this.getWidth()}
           contentContainerStyle={styles.container}
           onBegin={this._onAnimationBeginPage}

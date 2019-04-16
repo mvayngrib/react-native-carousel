@@ -1,7 +1,7 @@
 import React from 'react'
 import {
   View,
-  ViewPagerAndroid,
+  // ViewPagerAndroid,
 } from 'react-native'
 
 import createReactClass from 'create-react-class'
@@ -25,7 +25,8 @@ var CarouselPager = createReactClass({
   },
 
   render() {
-    return <ViewPagerAndroid
+    const Component = this.props.component
+    return <Component
       ref="viewPager"
       style={{flex: 1}}
       contentContainerStyle={this.props.contentContainerStyle}
@@ -38,7 +39,7 @@ var CarouselPager = createReactClass({
       scrollsToTop={false}
       >
         {this.props.children.map((c, idx) => <View key={idx} style={{flex: 1}}>{c}</View>)}
-      </ViewPagerAndroid>;
+      </Component>;
   },
 });
 
